@@ -1,0 +1,43 @@
+config:
+  target: 'http://localhost:3043'
+  phases:
+    - duration: 60
+      arrivalCount: 6
+      name: "1RPS"
+    - duration: 60
+      arrivalCount: 60
+      name: "10RPS"
+    - duration: 60
+      arrivalCount: 600
+      name: "100RPS"
+    - duration: 60
+      arrivalCount: 6000
+      name: "1000RPS"
+    # - duration: 600
+    #   arrivalCount: 20000
+    #   name: "Sandbox"
+  defaults:
+    headers:
+      x-my-service-auth: '987401838271002188298567'
+scenarios:
+  - flow:
+    - get:
+        url: "/api/photos/9576132"
+    - get:
+        url: "/api/photos/9142621"
+    - get:
+        url: "/api/photos/9867867"
+    - get:
+        url: "/api/photos/9998778"
+    - get:
+        url: "/api/photos/9095401"
+    - get:
+        url: "/api/photos/9136632"
+    - get:
+        url: "/api/photos/9663924"
+    - get:
+        url: "/api/photos/9998195"
+    - get:
+        url: "/api/photos/9012904"
+    - get:
+        url: "/api/photos/9825278"
