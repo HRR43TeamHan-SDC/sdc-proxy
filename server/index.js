@@ -37,6 +37,6 @@ app.use('/loaderio*', express.static(path.resolve(__dirname, '../loaderio.txt'))
 app.use('/:id', express.static('public'));
 
 const PORT = process.env.PORT || 3043;
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`Proxy listening on port ${PORT}`);
 });
