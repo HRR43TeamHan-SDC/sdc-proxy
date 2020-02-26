@@ -23,7 +23,7 @@ app.get('/api/photos/:id', (req, res) => {
   //     stream.pipe(res);
       // res.send(response.data);
     // })
-    .catch((err) => res.send(err));
+    // .catch((err) => res.send(err));
 });
 
 app.post('/api/photos', (req, res) => {
