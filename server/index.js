@@ -27,7 +27,7 @@ app.get('/api/photos/:id', (req, res) => {
 });
 
 app.post('/api/photos', (req, res) => {
-  res.redirect(`http://ec2-3-133-85-12.us-east-2.compute.amazonaws.com:3009/api/photos`);
+  res.redirect(307, `http://ec2-3-133-85-12.us-east-2.compute.amazonaws.com:3009/api/photos`);
   // axios.post(`http://ec2-3-133-85-12.us-east-2.compute.amazonaws.com:3009/api/photos`, req.body)
   //   .then((response) => res.send(response))
   //   .catch((err) => res.send(err));
