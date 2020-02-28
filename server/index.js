@@ -13,7 +13,7 @@ app.use(express.json());
 // app.use(morgan('dev'));
 
 
-const html = fs.createReadStream(
+const html =
 `<html>
 <head>
   <title>opentable</title>
@@ -516,7 +516,15 @@ app.use('/loaderio*', express.static(path.resolve(__dirname, '../loaderio.txt'))
 app.use('/:id', (req, res) => {
   const gzip = zlib.createGzip();
   res.set({ 'Content-Encoding': 'gzip' });
-  html.pipe(gzip).pipe(res);
+
+  const stream = new Readable({
+    read() {
+      this.push(html);
+      this.push(null);
+    },
+  });
+
+  stream.pipe(gzip).pipe(res);
 });
 
 
