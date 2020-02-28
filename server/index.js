@@ -34,7 +34,7 @@ const html =
     .grid-header {
       grid-area: header;
       height: 371px;
-      background-image: url('images/header.png');
+      background-image: url('../public/images/header.png');
     }
     .grid-left-gutter {
       grid-area : lgutter;
