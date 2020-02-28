@@ -13,7 +13,7 @@ app.use(express.json());
 // app.use(morgan('dev'));
 
 
-const html =
+const html = fs.createReadStream(
 `<html>
 <head>
   <title>opentable</title>
@@ -375,7 +375,7 @@ const html =
   <script src="http://sdc.heskett.ninja/bundle.js"></script>
   <script src="http://ec2-3-133-85-12.us-east-2.compute.amazonaws.com:3009/bundle.js"></script>
 </body>
-</html>`;
+</html>`);
 
 
 
@@ -514,7 +514,9 @@ app.post('/api/photos', (req, res) => {
 app.use('/loaderio*', express.static(path.resolve(__dirname, '../loaderio.txt')));
 // app.use('/:id', express.static('public'));
 app.use('/:id', (req, res) => {
-  res.send(html);
+  const gzip = zlib.createGzip();
+  res.set({ 'Content-Encoding': 'gzip' });
+  html.pipe(gzip).pipe(res);
 });
 
 
