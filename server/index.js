@@ -34,7 +34,7 @@ const html =
     .grid-header {
       grid-area: header;
       height: 371px;
-      background-image: url('../public/images/header.png');
+      background-image: url('/images/header.png');
     }
     .grid-left-gutter {
       grid-area : lgutter;
@@ -57,11 +57,11 @@ const html =
     .grid-footer {
       grid-area: footer;
       height: 795px;
-      background-image: url('images/footer.png');
+      background-image: url('/images/footer.png');
     }
     .area-description {
       height:255px;
-      background-image: url('images/description.png');
+      background-image: url('/images/description.png');
       background-repeat: no-repeat;
     }
     .area-menu {
@@ -81,19 +81,19 @@ const html =
     .area-map {
       width: 320px;
       height: 220px;
-      background-image: url('images/map.png');
+      background-image: url('/images/map.png');
       margin-top: 20px;
     }
     .area-detail1 {
       width: 320px;
       height: 643px;
-      background-image: url('images/detail1.png');
+      background-image: url('/images/detail1.png');
       background-repeat: no-repeat;
     }
     .area-detail2 {
       width: 320px;
       height: 182px;
-      background-image: url('images/detail2.png');
+      background-image: url('/images/detail2.png');
       background-repeat: no-repeat
     }
 
@@ -373,6 +373,14 @@ const html =
   <script src="http://ec2-3-133-85-12.us-east-2.compute.amazonaws.com:3009/bundle.js"></script>
 </body>
 </html>`;
+
+
+
+
+// HTML IMAGES
+app.get('/images/*', (req, res) => {
+  console.log('req.url: ', req.url);
+});
 
 
 
