@@ -7,7 +7,6 @@ const fs = require('fs');
 const zlib = require('zlib');
 // const morgan = require('morgan');
 
-const gzip = zlib.createGzip();
 
 const app = express();
 app.use(express.json());
@@ -383,6 +382,7 @@ const html =
 
 // HTML IMAGES
 app.get('/images/*', (req, res) => {
+  const gzip = zlib.createGzip();
   res.set({ 'Content-Encoding': 'gzip' });
   fs.createReadStream(path.resolve(__dirname, `../public${req.url}`)).pipe(gzip).pipe(res);
 });
