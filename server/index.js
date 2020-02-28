@@ -375,7 +375,7 @@ const html =
   <script src="http://sdc.heskett.ninja/bundle.js"></script>
   <script src="http://ec2-3-133-85-12.us-east-2.compute.amazonaws.com:3009/bundle.js"></script>
 </body>
-</html>`);
+</html>`;
 
 
 
