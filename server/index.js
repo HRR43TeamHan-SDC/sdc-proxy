@@ -14,7 +14,7 @@ const html =
 `<html>
 <head>
   <title>opentable</title>
-
+  <link rel='stylesheet' href='styles.css'/>
   <style>
     @font-face {
       font-family: BrandonText;
@@ -71,7 +71,7 @@ const html =
     .area-reservation {
       width: 320px;
       height: 320px;
-      background-image: url('https://ca.slack-edge.com/T0455847Q-URFLG08SZ-d710ac00c899-512');
+      background-image: url('https://cnet3.cbsistatic.com/img/_XpU5t4ywu3xYvA4dClTJay1hQA=/644x0/2015/07/07/4eb66f23-8702-46ac-b15f-c61352b41ccd/hansolo2.jpg');
       background-size: cover;
       color: white;
       text-align: center;
@@ -144,6 +144,99 @@ const html =
 </html>`;
 
 
+
+
+// MENU SERVICE
+// const MENU_HOSTNAME = process.env.MENU_HOSTNAME || 'localhost';
+// const MENU_PORT = process.env.MENU_PORT || 8001;
+
+app.get('/gettitle/:id', (req, res) => {
+  res.redirect(307, `http://sdc.heskett.ninja${req.url}`);
+});
+
+app.get('/getmenu/:id', (req, res) => {
+  res.redirect(307, `http://sdc.heskett.ninja${req.url}`);
+});
+
+
+app.post('/api/restaurant', (req, res) => {
+  res.redirect(307, `http://sdc.heskett.ninja${req.url}`);
+})
+
+
+// Try to use the following vs all the routes to simplify code
+// app.use('/api/restaurant/:id', (req, res) => {
+//   console.log(req.url);
+//   res.redirect(`http://sdc.heskett.ninja${req.url}`)
+// });
+
+
+app.route('/api/restaurant/:id')
+  .get((req, res) => {
+    res.redirect(307, `http://sdc.heskett.ninja${req.url}`);
+  })
+  .put((req, res) => {
+    res.redirect(307, `http://sdc.heskett.ninja${req.url}`);
+  })
+  .delete((req, res) => {
+    res.redirect(307, `http://sdc.heskett.ninja${req.url}`);
+  });
+
+
+app.route('/api/menu/:id')
+  .get((req, res) => {
+    res.redirect(307, `http://sdc.heskett.ninja${req.url}`);
+  })
+  .post((req, res) => {
+    // Used to post a new section
+    res.redirect(307, `http://sdc.heskett.ninja${req.url}`);
+  })
+  .put((req, res) => {
+    res.redirect(307, `http://sdc.heskett.ninja${req.url}`);
+  })
+  .delete((req, res) => {
+    res.redirect(307, `http://sdc.heskett.ninja${req.url}`);
+  });
+
+
+app.route('/api/section/:id')
+  .get((req, res) => {
+    res.redirect(307, `http://sdc.heskett.ninja${req.url}`);
+  })
+  .post((req, res) => {
+    // Used to post a new item
+    res.redirect(307, `http://sdc.heskett.ninja${req.url}`);
+  })
+  .put((req, res) => {
+    res.redirect(307, `http://sdc.heskett.ninja${req.url}`);
+  })
+  .delete((req, res) => {
+    res.redirect(307, `http://sdc.heskett.ninja${req.url}`);
+  });
+
+
+app.route('/api/item/:id')
+  .get((req, res) => {
+    res.redirect(307, `http://sdc.heskett.ninja${req.url}`);
+  })
+  .put((req, res) => {
+    res.redirect(307, `http://sdc.heskett.ninja${req.url}`);
+  })
+  .delete((req, res) => {
+    res.redirect(307, `http://sdc.heskett.ninja${req.url}`);
+  });
+
+
+// app.get('/getmenu/:id', (req, res) => {
+//   axios.get(`http://sdc.heskett.ninja${req.url}`)
+//   .then(response => response.data)
+//   .then(data => res.send(data))
+//   .catch(err => console.log('error at proxy serving',err));
+// });
+
+
+
+
 // PHOTO GALLERY
 app.get('/api/photos/:id', (req, res) => {
   // res.redirect(`http://ec2-3-133-85-12.us-east-2.compute.amazonaws.com:3009/api/photos/${req.params.id}`);
@@ -170,99 +263,7 @@ app.post('/api/photos', (req, res) => {
 
 
 
-
-// MENU SERVICE
-// const MENU_HOSTNAME = process.env.MENU_HOSTNAME || 'localhost';
-// const MENU_PORT = process.env.MENU_PORT || 8001;
-
-app.get('/gettitle/:id', (req, res) => {
-  res.redirect(`http://sdc.heskett.ninja${req.url}`);
-});
-
-app.get('/getmenu/:id', (req, res) => {
-  res.redirect(`http://sdc.heskett.ninja${req.url}`);
-});
-
-
-app.post('/api/restaurant', (req, res) => {
-  res.redirect(`http://sdc.heskett.ninja${req.url}`);
-})
-
-
-// Try to use the following vs all the routes to simplify code
-// app.use('/api/restaurant/:id', (req, res) => {
-//   console.log(req.url);
-//   res.redirect(`http://sdc.heskett.ninja${req.url}`)
-// });
-
-
-app.route('/api/restaurant/:id')
-  .get((req, res) => {
-    res.redirect(`http://sdc.heskett.ninja${req.url}`);
-  })
-  .put((req, res) => {
-    res.redirect(`http://sdc.heskett.ninja${req.url}`);
-  })
-  .delete((req, res) => {
-    res.redirect(`http://sdc.heskett.ninja${req.url}`);
-  });
-
-
-app.route('/api/menu/:id')
-  .get((req, res) => {
-    res.redirect(`http://sdc.heskett.ninja${req.url}`);
-  })
-  .post((req, res) => {
-    // Used to post a new section
-    res.redirect(`http://sdc.heskett.ninja${req.url}`);
-  })
-  .put((req, res) => {
-    res.redirect(`http://sdc.heskett.ninja${req.url}`);
-  })
-  .delete((req, res) => {
-    res.redirect(`http://sdc.heskett.ninja${req.url}`);
-  });
-
-
-app.route('/api/section/:id')
-  .get((req, res) => {
-    res.redirect(`http://sdc.heskett.ninja${req.url}`);
-  })
-  .post((req, res) => {
-    // Used to post a new item
-    res.redirect(`http://sdc.heskett.ninja${req.url}`);
-  })
-  .put((req, res) => {
-    res.redirect(`http://sdc.heskett.ninja${req.url}`);
-  })
-  .delete((req, res) => {
-    res.redirect(`http://sdc.heskett.ninja${req.url}`);
-  });
-
-
-app.route('/api/item/:id')
-  .get((req, res) => {
-    res.redirect(`http://sdc.heskett.ninja${req.url}`);
-  })
-  .put((req, res) => {
-    res.redirect(`http://sdc.heskett.ninja${req.url}`);
-  })
-  .delete((req, res) => {
-    res.redirect(`http://sdc.heskett.ninja${req.url}`);
-  });
-
-
-// app.get('/getmenu/:id', (req, res) => {
-//   axios.get(`http://sdc.heskett.ninja${req.url}`)
-//   .then(response => response.data)
-//   .then(data => res.send(data))
-//   .catch(err => console.log('error at proxy serving',err));
-// });
-
-
-
-
-//
+//////////////////////////////////////////////////////////////////////////////////////
 
 
 // app.use(express.static('public'));
@@ -271,6 +272,7 @@ app.use('/loaderio*', express.static(path.resolve(__dirname, '../loaderio.txt'))
 app.use('/:id', (req, res) => {
   res.send(html);
 });
+app.use('/:id/styles.css', express.static('../public/styles.css'));
 
 const PORT = process.env.PORT || 3043;
 app.listen(PORT, () => {
