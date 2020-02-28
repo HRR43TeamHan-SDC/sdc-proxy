@@ -380,6 +380,7 @@ const html =
 // HTML IMAGES
 app.get('/images/*', (req, res) => {
   console.log('req.url: ', req.url);
+  res.sendStatus(200);
 });
 
 
