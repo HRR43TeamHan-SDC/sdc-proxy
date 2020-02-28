@@ -14,7 +14,7 @@ const html =
 `<html>
 <head>
   <title>opentable</title>
-  <link rel='stylesheet' href='styles.css'/>
+  <link rel='stylesheet' href='/styles.css'/>
   <style>
     @font-face {
       font-family: BrandonText;
