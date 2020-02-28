@@ -3,6 +3,7 @@ const express = require('express');
 const axios = require('axios');
 const { Readable } = require('stream');
 const path = require('path');
+const fs = require('fs');
 // const morgan = require('morgan');
 
 const app = express();
@@ -379,8 +380,7 @@ const html =
 
 // HTML IMAGES
 app.get('/images/*', (req, res) => {
-  console.log('req.url: ', req.url);
-  res.sendStatus(200);
+  fs.createReadStream(`../public${req.url}`).pipe(res);
 });
 
 
