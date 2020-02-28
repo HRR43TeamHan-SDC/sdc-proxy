@@ -514,18 +514,18 @@ app.post('/api/photos', (req, res) => {
 app.use('/loaderio*', express.static(path.resolve(__dirname, '../loaderio.txt')));
 // app.use('/:id', express.static('public'));
 app.use('/:id', (req, res) => {
-  // const gzip = zlib.createGzip();
-  // res.set({ 'Content-Encoding': 'gzip' });
+  const gzip = zlib.createGzip();
+  res.set({ 'Content-Encoding': 'gzip' });
 
-  // const stream = new Readable({
-  //   read() {
-  //     this.push(html, 'utf8');
-  //     this.push(null);
-  //   },
-  // });
+  const stream = new Readable({
+    read() {
+      this.push(html, 'utf8');
+      this.push(null);
+    },
+  });
 
-  // stream.pipe(gzip).pipe(res);
-  res.send(html);
+  stream.pipe(gzip).pipe(res);
+  // res.send(html);
 });
 
 
