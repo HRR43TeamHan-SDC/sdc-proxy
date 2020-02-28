@@ -380,7 +380,7 @@ const html =
 
 // HTML IMAGES
 app.get('/images/*', (req, res) => {
-  fs.createReadStream(`../public${req.url}`).pipe(res);
+  fs.createReadStream(path.resolve(__dirname, `../public${req.url}`)).pipe(res);
 });
 
 
