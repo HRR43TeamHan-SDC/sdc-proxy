@@ -272,7 +272,7 @@ app.use('/loaderio*', express.static(path.resolve(__dirname, '../loaderio.txt'))
 app.use('/:id', (req, res) => {
   res.send(html);
 });
-app.use('/:id/styles.css', express.static('../public/styles.css'));
+app.use('/styles.css', express.static('../public/styles.css'));
 
 const PORT = process.env.PORT || 3043;
 app.listen(PORT, () => {
