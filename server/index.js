@@ -519,7 +519,7 @@ app.use('/:id', (req, res) => {
 
   const stream = new Readable({
     read() {
-      this.push(html);
+      this.push(html, 'utf8');
       this.push(null);
     },
   });
