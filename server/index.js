@@ -362,7 +362,7 @@ const html =
     <div class="grid-gap"></div>
     <div class="grid-right">
 
-      <div class="area-reservation"></div>
+      <div class="area-reservation"><div id="reservations"></div></div>
 
       <div class="area-map"></div>
       <div class="area-detail1"></div>
