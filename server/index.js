@@ -20,7 +20,6 @@ const html =
   <style>
     @font-face {
       font-family: BrandonText;
-      src: url(BrandonText-Regular.otf);
     }
     body {
       margin: 0;
