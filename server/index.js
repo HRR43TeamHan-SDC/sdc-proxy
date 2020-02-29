@@ -332,6 +332,9 @@ const html =
       text-align: left;
       color: black;
     }
+    .reservation-find-table-button span {
+      font-size: 36px;
+    }
   </style>
 </head>
 <body>
