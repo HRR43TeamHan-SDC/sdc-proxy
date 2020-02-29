@@ -329,6 +329,10 @@ const html =
       cursor: default;
       opacity: 0.6;
     }
+    .reservation-title, .input-title, .reservation-booked {
+      text-align: left;
+      color: black;
+    }
   </style>
 </head>
 <body>
@@ -369,9 +373,9 @@ const html =
     <div class="grid-right-gutter"></div>
     <div class="grid-footer"></div>
   </div>
-  <!-- <script src="https://dibdab.s3-us-west-2.amazonaws.com/main.js"></script> -->
   <script src="http://ec2-54-193-70-33.us-west-1.compute.amazonaws.com:4444/bundle.js"></script>
   <script src="http://sdc.heskett.ninja/bundle.js"></script>
+  <!-- <script src="http://ec2-18-188-10-239.us-east-2.compute.amazonaws.com:3300/bundle.js"></script> -->
   <script src="http://ec2-3-133-85-12.us-east-2.compute.amazonaws.com:3009/bundle.js"></script>
 </body>
 </html>`;
