@@ -356,7 +356,7 @@ const html =
 
       <div class="area-review">
         <br><br>
-        <div id="app">not loaded</div>
+        <div id="reviews">not loaded</div>
       </div>
 
     </div>
@@ -374,7 +374,7 @@ const html =
   </div>
   <script src="http://ec2-54-193-70-33.us-west-1.compute.amazonaws.com:4444/bundle.js"></script>
   <script src="http://sdc.heskett.ninja/bundle.js"></script>
-  <!-- <script src="http://ec2-18-188-10-239.us-east-2.compute.amazonaws.com:3300/bundle.js"></script> -->
+  <script src="http://ec2-18-188-10-239.us-east-2.compute.amazonaws.com:3300/bundle.js"></script>
   <script src="http://ec2-3-133-85-12.us-east-2.compute.amazonaws.com:3009/bundle.js"></script>
 </body>
 </html>`;
@@ -513,6 +513,14 @@ app.post('/api/photos', (req, res) => {
   axios.post(`http://ec2-3-133-85-12.us-east-2.compute.amazonaws.com:3009/api/photos`, req.body)
     .then((response) => res.send(response))
     .catch((err) => res.send(err));
+});
+
+
+
+
+// REVIEWS MODULE
+app.get('/api/reviews/:restaurantId', (req, res) => {
+  res.redirect(307, `http://ec2-18-188-10-239.us-east-2.compute.amazonaws.com:3300${req.url}`);
 });
 
 
