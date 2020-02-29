@@ -362,7 +362,9 @@ const html =
     <div class="grid-gap"></div>
     <div class="grid-right">
 
-      <div class="area-reservation">MVP BABY!</div>
+      <div class="area-reservation">
+        <div id="reservations"><div>
+      </div>
 
       <div class="area-map"></div>
       <div class="area-detail1"></div>
@@ -372,6 +374,7 @@ const html =
     <div class="grid-footer"></div>
   </div>
   <!-- <script src="https://dibdab.s3-us-west-2.amazonaws.com/main.js"></script> -->
+  <script src="http://ec2-54-193-70-33.us-west-1.compute.amazonaws.com:4444/bundle.js"></script>
   <script src="http://sdc.heskett.ninja/bundle.js"></script>
   <script src="http://ec2-3-133-85-12.us-east-2.compute.amazonaws.com:3009/bundle.js"></script>
 </body>
@@ -390,7 +393,14 @@ app.get('/images/*', (req, res) => {
 
 
 
-// MENU SERVICE
+// RESERVATION MODULE
+app.get('/api/reservations/:restaurantId/dateTime/:dateTime', (req, res) => {
+  res.redirect(307, `http://ec2-54-193-70-33.us-west-1.compute.amazonaws.com:4444${req.url}`)
+});
+
+
+
+// MENU MODULE
 // const MENU_HOSTNAME = process.env.MENU_HOSTNAME || 'localhost';
 // const MENU_PORT = process.env.MENU_PORT || 8001;
 
@@ -481,7 +491,7 @@ app.route('/api/item/:id')
 
 
 
-// PHOTO GALLERY
+// PHOTO GALLERY MODULE
 app.get('/api/photos/:id', (req, res) => {
   // res.redirect(`http://ec2-3-133-85-12.us-east-2.compute.amazonaws.com:3009/api/photos/${req.params.id}`);
   axios.get(`http://ec2-3-133-85-12.us-east-2.compute.amazonaws.com:3009/api/photos/${req.params.id}`)
