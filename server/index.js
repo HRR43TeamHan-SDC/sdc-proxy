@@ -73,6 +73,8 @@ const html =
     .area-reservation {
       width: 320px;
       height: 320px;
+      background-image: url('https://cnet3.cbsistatic.com/img/_XpU5t4ywu3xYvA4dClTJay1hQA=/644x0/2015/07/07/4eb66f23-8702-46ac-b15f-c61352b41ccd/hansolo2.jpg');
+      background-size: cover;
       color: white;
       text-align: center;
       line-height: 550px;
@@ -360,9 +362,7 @@ const html =
     <div class="grid-gap"></div>
     <div class="grid-right">
 
-      <div class="area-reservation">
-        <div id="reservations"><div>
-      </div>
+      <div class="area-reservation"></div>
 
       <div class="area-map"></div>
       <div class="area-detail1"></div>
