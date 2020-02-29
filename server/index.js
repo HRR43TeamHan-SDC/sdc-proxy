@@ -396,6 +396,10 @@ app.get('/api/reservations/:restaurantId/dateTime/:dateTime', (req, res) => {
   res.redirect(307, `http://ec2-54-193-70-33.us-west-1.compute.amazonaws.com:4444${req.url}`)
 });
 
+app.get('/ic_social_proof.svg', (req, res) => {
+  res.send('📖');
+});
+
 
 
 // MENU MODULE
